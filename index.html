@@ -3,10 +3,13 @@ title: Hello, My Blog
 layout: default
 ---
 
-{{ page.title }}
-
 {% for post in site.posts %}
 
-{{ post.date|date_to_string }} <a href='{{ site.baseurl }}{{ post.url }}'>{{ post.title }}</a>
+<div class="card">
+     <a href='{{ site.baseurl }}{{ post.url }}'></a>
+    <img src= '{{ post.image_url }}' />
+    <div class='title'>{{ post.title }}</div>
+    <div class="time">{{ post.date|date_to_string }}</div>
+</div>
 
 {% endfor %}
