@@ -1,0 +1,95 @@
+a:link {color: #000000; text-decoration: none;}       /* 未访问的链接 */
+a:visited {color: #000000; text-decoration: none;}  /* 已访问的链接 */
+a:hover {color: #000000; text-decoration: none;}    /* 鼠标移动到链接上 */
+a:active {color: #000000; text-decoration: none;}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Microsoft YaHei"
+}
+
+body {
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    min-width: 800px;
+    overflow: scroll;
+    min-height: 600px;
+    position: absolute;
+    background-color: rgba(142,179,146,0.3);
+}
+
+#container {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+    box-shadow: 0px 2px 8px 3px #a8a8a8;
+}
+
+#container #head {
+    width: 100%;
+    height: 200px;
+    margin:0 auto;
+    position: relative;
+}
+
+#head .headline {
+    width:100%;
+    height: 100%;
+}
+
+#head .myself {
+    top: 50%;
+    left: 50%;
+    width:100px;
+    height: 100px;
+    margin-top: -50px;
+    margin-left: -50px;
+    position: absolute;
+}
+
+#container #contain {
+    width: 100%;
+    height: 800px;
+    padding-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #f1e3c6;
+}
+
+#contain .card {
+    width: 250px;
+    height: 300px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px 0px #888888;
+}
+
+#contain .card a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 300px;
+}
+
+#contain .card img {
+    width: 250px;
+    height: 225px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: #000000;
+}
+
+#contain .card .title {
+    display: block;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+

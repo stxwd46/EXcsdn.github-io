@@ -1,7 +1,7 @@
 ---
 title: 我的第一篇文章
 image_url: images/article_1.jpg
-layout: default
+layout: detail
 ---
 
 # {{ page.title }}

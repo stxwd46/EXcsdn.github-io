@@ -1,7 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    overflow: hidden;
     font-family: "Microsoft YaHei"
 }
 
@@ -11,6 +10,7 @@ body {
     width:100%;
     height: 100%;
     min-width: 800px;
+    overflow: scroll;
     min-height: 600px;
     position: absolute;
     background-color: rgba(142,179,146,0.3);
@@ -18,7 +18,7 @@ body {
 
 #container {
     width: 100%;
-    height: 100%;
+    height: auto;
     margin: 0 auto;
     max-width: 1000px;
     position: relative;
@@ -27,7 +27,7 @@ body {
 
 #container #head {
     width: 100%;
-    height: 200px;
+    height: 150px;
     margin:0 auto;
     position: relative;
 }
@@ -49,7 +49,42 @@ body {
 
 #container #contain {
     width: 100%;
-    height: 100%;
+    height: 800px;
+    padding-top: 20px;
     text-align: center;
+    margin-bottom: 20px;
     background-color: #f1e3c6;
 }
+
+#contain .card {
+    width: 250px;
+    height: 300px;
+    margin: 20px auto;
+    position: relative;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 10px 0px #888888;
+}
+
+#contain .card a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 300px;
+}
+
+#contain .card img {
+    width: 250px;
+    height: 225px;
+    display: block;
+    margin-bottom: 10px;
+    background-color: #000000;
+}
+
+#contain .card .title {
+    display: block;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+
