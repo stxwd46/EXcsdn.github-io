@@ -1,0 +1,24 @@
+---
+title: 我的第一篇文章
+image_url: images/article1/cover.jpg
+layout: detail
+date: 2015-04-24
+---
+<h1> {{ page.title }} </h1>
+<div class="time">{{ page.date|date_to_string }}</div>
+<div class="article">
+    <p>我的GitHub博客基本框架已经构建完成，第一篇文章为各种标签样式的调试</p>
+    <p>1. 二级标题</p>
+    <h2>这是二级标题</h2>
+    <p>2. 链接</p>
+    <a href="http://stxwd46.github.io/EXcsdn.github-io/" target="_blank">My blog</a>
+    <p>3. 图片</p>
+    <img src="../../../images/article1/cover.jpg" width="150" height="150" alt="a picture">
+    <p>4. 代码块</p>
+    <pre>
+    var myself = {};
+    myself.name = 'EX';
+    myself.age = '22';
+    console.dir(myself);</pre>
+</div>
+
