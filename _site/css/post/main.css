@@ -54,21 +54,25 @@ body {
     background-color: #f1e3c6;
 }
 
-#contain h1 {
-    margin: 20px 0 15px 0;
-}
-
 #contain .article {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     text-align: left;
 }
 
+#contain h1 {
+    margin: 20px 0 15px 0;
+}
+
 #contain h2 {
     margin: 5px 0;
-    font-size: 20px;
+    font-size: 22px;
     padding: 2px 0px 4px 5px;
     background-color: #e8c9a4;
+}
+
+#contain h3 {
+    font-size: 18px;
 }
 
 #contain img {
@@ -78,9 +82,14 @@ body {
 #contain pre {
     font-size: 12px;
     background: #e8e8e8;
+    padding: 4px 0px 4px 10px;
     border: 1px solid #c9c9c9;
 }
 
 #contain .time {
     margin-bottom: 8px;
+}
+
+#contain .red {
+    color: red;
 }

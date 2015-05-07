@@ -78,12 +78,18 @@ body {
     height: 300px;
 }
 
+
+#contain .card a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 #contain .card img {
     width: 250px;
     height: 225px;
     display: block;
     margin-bottom: 10px;
     background-color: #000000;
+    border-bottom: 1px solid #e8e8e8;
 }
 
 #contain .card .title {
