@@ -8,16 +8,16 @@
     </head>
     <body>
         <div id="container">
-            <div id="head">
+            <header>
                 {% if page.img %}
                    <img class="headline" src="{{ page.img }}">
                 {% else %}
                    <img class="headline" src="../../../images/detail/detail_default_head.jpg">
                 {% endif %}
-            </div>
-            <div id="contain">
+            </header>
+            <article>
                 {{ content }}
-            </div>
+            </article>
         </div>
 
     </body>

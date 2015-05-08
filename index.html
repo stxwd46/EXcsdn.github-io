@@ -5,11 +5,11 @@ layout: default
 
 {% for post in site.posts %}
 
-<div class="card">
+<section>
      <a href='{{ site.baseurl }}{{ post.url }}'></a>
     <img src= '{{ post.image_url }}' />
-    <div class='title'>{{ post.title }}</div>
-    <div class="time">{{ post.date|date_to_string }}</div>
-</div>
+    <span class='title'>{{ post.title }}</span>
+    <time>{{ post.date|date_to_string }}</time>
+</section>
 
 {% endfor %}

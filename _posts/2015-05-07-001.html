@@ -7,9 +7,9 @@ date: 2015-05-07
 <h1> {{ page.title }} </h1>
 <div class="time">{{ page.date|date_to_string }}</div>
 <div class="article">
-    <p>之前闲暇之余尝试着在github上搭建自己的博客，搭建过程中发现没有自己想象的那么容易，几经波折，好不容易才搭建好了雏形。现在就将在github上构建自己博客的整个流程好好总结一下。</p>
-    <p>注：本文并非完全原创，在搭建自己博客的时候，我也上网查阅了很多资料，只是网上我所查到的资料或多或少都有这样那样的欠缺。所以，我将这些资料整合在一起，并分享我在构建过程中遇到的问题和解决方法。</p>
-    <b>另外，在github构建自己博客并非只有一种方法，我整合出来的只是其中的一种。</b>
+    <p>之前闲暇之余尝试着在github上搭建自己的博客，搭建过程中发现没有自己想象的那么容易，几经波折，好不容易才搭建好了雏形。现在就将在github上构建自己博客的整个流程好好总结一下。
+    注：本文并非完全原创，在搭建自己博客的时候，我也上网查阅了很多资料，只是网上我所查到的资料或多或少都有这样那样的欠缺。所以，我将这些资料整合在一起，并分享我在构建过程中遇到的问题和解决方法。
+    <b>另外，在github构建自己博客并非只有一种方法，我整合出来的只是其中的一种。</b></p>
     <h2>1.建立一个项目</h2>
     <p>先在GitHub创建一个项目，名字随意，尽量全部小写字母，避免随后会碰到的URL冲突问题。</p>
     <h3>1.1 在自己github右上角上，点击+号按钮，在出现的菜单中选择 New repository</h3>
@@ -18,48 +18,48 @@ date: 2015-05-07
     <img src="../../../images/article2/002.jpg" alt="" width="695" height="420">
     <p>项目创建完毕。</p>
     <h2>2.安装Git</h2>
-    <p>git是一个免费的、分布式的版本控制工具，或是一个强调了速度快的源代码管理工具。</p>
-    <p>git的安装地址(<a href="http://msysgit.github.io/" target="_blank">http://msysgit.github.io/</a>)</p>
-    <p>关于git的具体安装步骤可参考<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank">http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html</a></p>
-    <p>关于git的常用命令可参考<a href="http://www.bootcss.com/p/git-guide/" target="_blank">http://www.bootcss.com/p/git-guide/</a></p>
+    <p>git是一个免费的、分布式的版本控制工具，或是一个强调了速度快的源代码管理工具。
+    git的安装地址(<a href="http://msysgit.github.io/" target="_blank">http://msysgit.github.io/</a>)
+    关于git的具体安装步骤可参考<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank">http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html</a>
+    关于git的常用命令可参考<a href="http://www.bootcss.com/p/git-guide/" target="_blank">http://www.bootcss.com/p/git-guide/</a></p>
     <h2>3.clone项目</h2>
-    <p>本地运行Git，随意选个目录，将刚才创建的项目clone下来。</p>
-    <p>例：</p>
-    <pre>
+    <p>本地运行Git，随意选个目录，将刚才创建的项目clone下来。
+    例：</p>
+    <code><pre>
     cd /e/blog
     git clone https://github.com/stxwd46/EX.github-io.git
-    cd EX.github-io</pre>
+    cd EX.github-io</pre></code>
     <h2>4.建立配置文件_config.yml</h2>
-    <b>注意：之后建立的所有文档务必使用UTF-8 无 BOM(隐藏字符) 的编码保存</b>
-    <p>在项目的根目录下打开git命令行界面，输入命令 >> _config.yml 新建文件 _config.yml ，填写 baseurl: /blogdemo ， blogdemo是你的项目名称，这一行内容规定了整个网站的根路径。 </p>
-    <p>例：</p>
-    <pre>baseurl: /EX.github-io</pre>
+    <p><b>注意：之后建立的所有文档务必使用UTF-8 无 BOM(隐藏字符) 的编码保存</b>
+    在项目的根目录下打开git命令行界面，输入命令 >> _config.yml 新建文件 _config.yml ，填写 baseurl: /blogdemo ， blogdemo是你的项目名称，这一行内容规定了整个网站的根路径。
+    例：</p>
+    <code><pre>baseurl: /EX.github-io</pre></code>
     <p>目录结构变为</p>
-    <pre>
+    <code><pre>
     /EX.github-io
-        |--　_config.yml</pre>
+        |--　_config.yml</pre></code>
     <h2>5.建立主页</h2>
     <p>在根目录下新建文件 index.html ， 内容如下：</p>
-    <pre>
+    <code><pre>
     ---
     title: Hello, My Blog
     ---
 
-    {{ page.title }}</pre>
-    <p>每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。它用三根短划线"---"，标记开始和结束，里面每一行设置一种元数据。"title: Hello, My Blog"，表示该文章的标题是"Hello, My Blog"，如果不设置这个值，默认使用嵌入文件名的标题，即"hello world"。</p>
-    <p>在yaml文件头后面，就是文章的正式内容，{{}}这些是Liquid模板语言,在{{}}里面我们可以使用模板变量。{{ page.title }} 表示“本页面的标题”，因为我们前面设置了title为Hello， My Blog。所以到时候进入到博客首页，title 就会显示相应的文案。</p>
-    <p>目录结构变成：</p>
-    <pre>
+    {{ page.title }}</pre></code>
+    <p>每篇文章的头部，必须有一个yaml文件头，用来设置一些元数据。它用三根短划线"---"，标记开始和结束，里面每一行设置一种元数据。"title: Hello, My Blog"，表示该文章的标题是"Hello, My Blog"，如果不设置这个值，默认使用嵌入文件名的标题，即"hello world"。
+    在yaml文件头后面，就是文章的正式内容，{{}}这些是Liquid模板语言,在{{}}里面我们可以使用模板变量。{{ page.title }} 表示“本页面的标题”，因为我们前面设置了title为Hello， My Blog。所以到时候进入到博客首页，title 就会显示相应的文案。
+    目录结构变成：</p>
+    <code><pre>
     /EX.github-io
         |--　_config.yml
-        |--   index.html</pre>
+        |--   index.html</pre></code>
     <h2>6.在_posts内撰写文章，并在首页加入文章列表</h2>
-    <p>现在首页有了，那我们怎么发博文上去呢？</p>
-    <p>回到项目根目录， 打开git bash，运行 mkdir _posts 新建一个目录，看名字也知道啦，这里存放你所有的文章。</p>
-    <p>进入_posts目录，新建一篇文章。注意默认的文件名格式是 year-month-day-postTitle 这样。比如 2015-05-05-my_first_article.md，尽量避免空格或者其他乱七八糟的字符，这个文件名将作为URL的生成依据。文件名的格式可以通过修改 _config.yml中的 permalink 属性而改变，默认值为 date ，也就是我们刚刚创建的文件的样子，具体的规则可以看这里。</p>
-    <p>如果你发现了我刚才创建的文件后缀名是 .md ，熟悉GitHub或者StackOverFlow的朋友应该知道Markdown 格式。对于不熟悉前端的人来说，用markdown可以避开HTML，转而使用更加直观的Markdown语法。如果不熟悉Markdown语法也没关系，可以参见这份Markdown 语法说明，应该说是相当易学，并且在熟悉之后非常易用的。而作为一个前端开发者来讲，我还是更倾向于用html。</p>
-    <p>回到主题，打开刚才创建的文件，输入如下内容：</p>
-    <pre>
+    <p>现在首页有了，那我们怎么发博文上去呢？
+    回到项目根目录， 打开git bash，运行 mkdir _posts 新建一个目录，看名字也知道啦，这里存放你所有的文章。
+    进入_posts目录，新建一篇文章。注意默认的文件名格式是 year-month-day-postTitle 这样。比如 2015-05-05-my_first_article.md，尽量避免空格或者其他乱七八糟的字符，这个文件名将作为URL的生成依据。文件名的格式可以通过修改 _config.yml中的 permalink 属性而改变，默认值为 date ，也就是我们刚刚创建的文件的样子，具体的规则可以看这里。
+    如果你发现了我刚才创建的文件后缀名是 .md ，熟悉GitHub或者StackOverFlow的朋友应该知道Markdown 格式。对于不熟悉前端的人来说，用markdown可以避开HTML，转而使用更加直观的Markdown语法。如果不熟悉Markdown语法也没关系，可以参见这份Markdown 语法说明，应该说是相当易学，并且在熟悉之后非常易用的。而作为一个前端开发者来讲，我还是更倾向于用html。
+    回到主题，打开刚才创建的文件，输入如下内容：</p>
+    <code><pre>
     ---
     title: 我的第一篇文章
     ---
@@ -92,12 +92,12 @@ date: 2015-05-07
 
     这里是第三部分的内容
 
-    &#123;&#123; page.date|date_to_string &#125;&#125;</pre>
-    <p>这段内容中使用了最常用的几种Markdown语法，比如使用 # ，## 表示 HTML 中的 &lt;h1&gt;&lt;/h1&gt; , &lt;h2&gt;&lt;/h2&gt;。使用[text](link)创建超链接，使用 连续多个 - 创建水平线（注意：不包括最上端包围title所使用的横线，那里表示一个页面的“头属性”），等等。更多详细的语法可以在之前提到的页面查询，这里不再赘述，总之，这是一种更加贴近真实写作的语法，推荐大家尝试。</p>
-    <p>页面最后面的那个 {{ page.date|date_to_string }} 是指显示本页的日期属性，并且转换为可读的字符串形式。同样也是Liquid语法。</p>
-    <p>OK，第一篇文章就写好了，然后到主页给文章加上入口链接。</p>
-    <p>打开我们的 index.html 文件，添加内容，变成下面这样：</p>
-    <pre>
+    &#123;&#123; page.date|date_to_string &#125;&#125;</pre></code>
+    <p>这段内容中使用了最常用的几种Markdown语法，比如使用 # ，## 表示 HTML 中的 &lt;h1&gt;&lt;/h1&gt; , &lt;h2&gt;&lt;/h2&gt;。使用[text](link)创建超链接，使用 连续多个 - 创建水平线（注意：不包括最上端包围title所使用的横线，那里表示一个页面的“头属性”），等等。更多详细的语法可以在之前提到的页面查询，这里不再赘述，总之，这是一种更加贴近真实写作的语法，推荐大家尝试。
+    页面最后面的那个 {{ page.date|date_to_string }} 是指显示本页的日期属性，并且转换为可读的字符串形式。同样也是Liquid语法。
+    OK，第一篇文章就写好了，然后到主页给文章加上入口链接。
+    打开我们的 index.html 文件，添加内容，变成下面这样：</p>
+    <code><pre>
     ---
     title: My Blog
     ---
@@ -108,54 +108,55 @@ date: 2015-05-07
 
     &#123;&#123; post.date|date_to_string &#125;&#125; &lt;a href='&#123;&#123; site.baseurl &#125;&#125;&#123;&#123; post.url &#125;&#125;'&gt;&#123;&#123; post.title &#125;&#125;&lt;/a&gt;
 
-    &#123;% endfor %&#125;</pre>
-    <p>简单解释一下，Liquid标记最主要分为两种，一种是直接输出变量内容，像这样：</p>
-    <p>{{ page.title }}</p>
-    <p>另一种则是逻辑命令形式的，像这样：</p>
-    <p>{% for x in y %} ... {% endfor %}</p>
-    <p>而刚才写进主页的内容，就是遍历所有post文件，然后逐一显示在页面上，这里需要注意的一点就是在创建文章的超链接时，除了 post.url 之外，也要注意在前面加上site.url ，原因前面也有提到过，我们正在创建的是 Project Pages 类型的网站，其最终生成的网址根目录是：username.github.com/projectname，而 post.url 生成的超链接仅仅会自动加上 username.github.com/ 这样的前缀。</p>
-    <p>现在检查一下更改的所有内容，确认不要犯下愚蠢的错误，比如把 “.” 打成 “。“或者单词拼错之类的。</p>
-    <p>目录结构变为</p>
-    <pre>
+    &#123;% endfor %&#125;</pre></code>
+    <p>简单解释一下，Liquid标记最主要分为两种，一种是直接输出变量内容，像这样：
+    &#123;&#123;page.title &#125;&#125;
+    另一种则是逻辑命令形式的，像这样：
+    &#123;% for x in y %&#125; ... &#123;% endfor %&#125;
+    而刚才写进主页的内容，就是遍历所有post文件，然后逐一显示在页面上，这里需要注意的一点就是在创建文章的超链接时，除了 post.url 之外，也要注意在前面加上site.url ，原因前面也有提到过，我们正在创建的是 Project Pages 类型的网站，其最终生成的网址根目录是：username.github.com/projectname，而 post.url 生成的超链接仅仅会自动加上 username.github.com/ 这样的前缀。
+    现在检查一下更改的所有内容，确认不要犯下愚蠢的错误，比如把 “.” 打成 “。“或者单词拼错之类的。
+    目录结构变为</p>
+    <code><pre>
     /EX.github-io
         |--　_config.yml
         |--   index.html
         |--   _posts
-        |    |--　2015-05-05-my_first_article.md</pre>
+        |    |--　2015-05-05-my_first_article.md</pre></code>
     <h2>7.配置SSH keys</h2>
-    <p>为什么要配置ssh keys？因为github和本地代码做推送和拉取时，需要用到ssh的密钥对进行数据加解密，由于github上新建的项目没有添加密钥，所以本地仓库连接不到远程仓库。</p>
-    <p>那么如何配置ssh keys呢？</p>
+    <p>为什么要配置ssh keys？因为github和本地代码做推送和拉取时，需要用到ssh的密钥对进行数据加解密，由于github上新建的项目没有添加密钥，所以本地仓库连接不到远程仓库。
+    那么如何配置ssh keys呢？</p>
     <h3>7.1 我们需要检查你电脑上现有的ssh key：</h3>
-    <pre>cd ~/.ssh</pre>
+    <code><pre>cd ~/.ssh</pre></code>
     <p>如果提示：No such file or directory 说明你是第一次使用git。</p>
     <h3>7.2 生成新的ssh keys：</h3>
-    <pre>ssh-keygen -t rsa -C "邮件地址@youremail.com"</pre>
-    <p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」。</p>
-    <p>按回车后出现</p>
+    <code><pre>ssh-keygen -t rsa -C "邮件地址@youremail.com"</pre></code>
+    <p>注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」。
+    按回车后出现</p>
     <img src="../../../images/article2/003.jpg" alt="">
-    <p>再按一次回车即可。</p>
-    <p>然后系统会要你输入密码：</p>
-    <pre>
+    <p>再按一次回车即可。
+    然后系统会要你输入密码：</p>
+    <code><pre>
     Enter passphrase (empty for no passphrase):<输入加密串>
-    Enter same passphrase again:<再次输入加密串></pre>
-    <p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。</p>
-    <p>注意：输入密码的时候没有*字样的，你直接输入就可以了。</p>
-    <p>最后看到这样的界面，就成功设置ssh key了：</p>
+    Enter same passphrase again:<再次输入加密串></pre></code>
+    <p>在回车中会提示你输入一个密码，这个密码会在你提交项目时使用，如果为空的话提交项目时则不用输入。这个设置是防止别人往你的项目里提交内容。
+    注意：输入密码的时候没有*字样的，你直接输入就可以了。
+    最后看到这样的界面，就成功设置ssh key了：</p>
     <img src="../../../images/article2/004.jpg" alt="" width="496" height="265">
     <h3>7.3 添加ssh key到GitHub</h3>
-    <p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。</p>
-    <p>· 1、打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。</p>
-    <p>· 2、登录你的GitHub个人主页。点击右上角的 Settings进入设置页面，然后点击SSH Keys页面中的Add SSH key按钮</p>
-    <p>· 3、把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</p>
+    <p>在本机设置SSH Key之后，需要添加到GitHub上，以完成SSH链接的设置。
+    · 1、打开本地C:\Documents and Settings\Administrator.ssh\id_rsa.pub文件。此文件里面内容为刚才生成人密钥。如果看不到这个文件，你需要设置显示隐藏文件。准确的复制这个文件的内容，才能保证设置的成功。
+    · 2、登录你的GitHub个人主页。点击右上角的 Settings进入设置页面，然后点击SSH Keys页面中的Add SSH key按钮
+    · 3、把你本地生成的密钥复制到里面（key文本框中）， 点击 add key 就ok了</p>
     <img src="../../../images/article2/005.jpg" alt="" width="90%" height="90%">
     <h2>8.发布到GitHub</h2>
     <p>这个时候我们就可以把页面提交到github上了，到根目录打开git命令行界面</p>
     <h3>8.1 把刚创建的所有文件添加到本地git库</h3>
-    <pre>git add -A</pre>
+    <code><pre>git add -A</pre></code>
     <h3>8.2 保持良好的习惯，每次提交都提交添加描述</h3>
-    <pre>git commit -m "create my blog"</pre>
-    <h3>8.3 推送到GitHub，这里注意，因为我们使用的是GitHub Pages中的 Project Pages，GitHub规定，只有该分支中的页面，才会生成网页文件。即GitHub仅会将分支 gh-pages 下的内容进行自动生成操作， 所以本地的 master 分支应推送到远端的 gh-pages 分支</h3>
-    <pre>git push origin master:gh-pages</pre>
+    <code><pre>git commit -m "create my blog"</pre></code>
+    <p><h3>8.3 推送到GitHub</h3>
+    这里注意，因为我们使用的是GitHub Pages中的 Project Pages，GitHub规定，只有该分支中的页面，才会生成网页文件。即GitHub仅会将分支 gh-pages 下的内容进行自动生成操作， 所以本地的 master 分支应推送到远端的 gh-pages 分支</p>
+    <code><pre>git push origin master:gh-pages</pre></code>
     <p>输入账号和密码，账号即你的GitHub账号(<span class="red">不是昵称，是账号名！</span>)，输入密码的时候命令行界面不会有任何的变化，所以在输入密码的时候要谨慎小心。之后按回车即可。</p>
     <img src="../../../images/article2/006.jpg" alt="">
     <p>好了，那现在我们要如何查看我们的博客页面呢。打开GitHub，进入到自己博客的仓库，右侧菜单栏有一个setting选项</p>
@@ -164,9 +165,9 @@ date: 2015-05-07
     <img src="../../../images/article2/008.jpg" alt="" width="556" height="481">
     <p>GitHub Pages中显示的链接就是你的博客地址啦。</p>
     <h2>9.增加模板套装_layouts</h2>
-    <p>其实到第8步博客的构建就已经完成了，只是没有样式的博客实在太难看。GitHub Pages有提供一些主题给我们使用。但作为一个前端开发者，肯定更希望自己给自己的博客布局和创建样式。</p>
-    <p>回到项目根目录，新建文件夹 _layouts，顾名思义，“布局”是也。在 _layouts 中新建一个最基本的布局文件，姑且命名为default.html好了：</p>
-    <pre>
+    <p>其实到第8步博客的构建就已经完成了，只是没有样式的博客实在太难看。GitHub Pages有提供一些主题给我们使用。但作为一个前端开发者，肯定更希望自己给自己的博客布局和创建样式。
+    回到项目根目录，新建文件夹 _layouts，顾名思义，“布局”是也。在 _layouts 中新建一个最基本的布局文件，姑且命名为default.html好了：</p>
+    <code><pre>
     &lt;!DOCTYPE html&gt;
 
     &lt;html&gt;
@@ -179,58 +180,58 @@ date: 2015-05-07
           &#123;&#123; content &#125;&#125;
 
         &lt;/body&gt;
-    &lt;/html&gt;</pre>
-    <p>首先，charset=utf-8让我们一劳永逸地解决了UTF-8的编码问题，随后指定了正文内容的位置，当然在这里只是一个最简单的内容，在body内仅有一个 {{ content }} 标签，你可以根据自己的喜好对页面进行任何改动，只要记得保留这个内容标签在你想要的位置就好。</p>
-    <p>然后我们修改index.html和刚写完的那篇文章，只要在头属性上加一句就好：</p>
-    <pre>
+    &lt;/html&gt;</pre></code>
+    <p>首先，charset=utf-8让我们一劳永逸地解决了UTF-8的编码问题，随后指定了正文内容的位置，当然在这里只是一个最简单的内容，在body内仅有一个 {{ content }} 标签，你可以根据自己的喜好对页面进行任何改动，只要记得保留这个内容标签在你想要的位置就好。
+    然后我们修改index.html和刚写完的那篇文章，只要在头属性上加一句就好：</p>
+    <code><pre>
     ---
     title: xxoo
     layout: default.html
-    ---</pre>
-    <p>我们当然还可以把这个结构变得更灵活一些，比如继续新增两个模板分别叫做l_post.html与l_index.html，他们首先引用default.html，但在其基础上做出一定的修改。然后首页使用l_index模板，而所有的post文件则使用l_post模板，等等等等，请随意发挥。但始终记得加上 {{ content }} 标签</p>
-    <p>目录结构变为</p>
-    <pre>
+    ---</pre></code>
+    <p>我们当然还可以把这个结构变得更灵活一些，比如继续新增两个模板分别叫做l_post.html与l_index.html，他们首先引用default.html，但在其基础上做出一定的修改。然后首页使用l_index模板，而所有的post文件则使用l_post模板，等等等等，请随意发挥。但始终记得加上 {{ content }} 标签
+    目录结构变为</p>
+    <code><pre>
     /EX.github-io
         |--　_config.yml
         |--   index.html
         |--   _posts
         |    |--　2015-05-05-my_first_article.md
         |--   _layouts
-        |    |--　default.html</pre>
-    <p>再次推送到GitHub即可。</p>
-    <p>这样，我们就已经构建好了一个最简单的blog。之后你们就可以开始为自己的博客添砖加瓦了。</p>
+        |    |--　default.html</pre></code>
+    <p>再次推送到GitHub即可。
+    这样，我们就已经构建好了一个最简单的blog。之后你们就可以开始为自己的博客添砖加瓦了。</p>
     <h2>10.问题汇总</h2>
     <h3>10.1 推送到GitHub之后个人主页的contributions没有提交记录</h3>
-    <p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。</p>
-    <p>如何查看自己的名称和邮箱呢。回到GitHub个人主页，点击右上角的setting图标</p>
+    <p>Git会根据用户的名字和邮箱来记录提交。GitHub也是用这些信息来做权限的处理，输入下面的代码进行个人信息的设置，把名称和邮箱替换成你自己的。
+    如何查看自己的名称和邮箱呢。回到GitHub个人主页，点击右上角的setting图标</p>
     <img src="../../../images/article2/009.jpg" alt="" width="300" height="78">
     <p>进入之后Personal settings菜单栏下的Profile页面中，Name即为你的名字</p>
     <img src="../../../images/article2/010.jpg" alt="" width="626" height="386">
     <p><span class="red">但邮箱不是Name下面的Public email</span>，很多人在这里被误导了。邮箱是Emails页面中的邮箱地址</p>
     <img src="../../../images/article2/011.jpg" alt="" width="596" height="176">
-    <P>知道了名字和邮箱之后，打开git命令行界面，通过下面的命令行来设置你的名字和邮箱</P>
-    <pre>
+    <p>知道了名字和邮箱之后，打开git命令行界面，通过下面的命令行来设置你的名字和邮箱</p>
+    <code><pre>
     git config --global user.name "cnfeat"//用户名
-    git config --global user.email  "cnfeat@gmail.com"//填写自己的邮箱</pre>
-    <p>设置正确之后，提交记录就都恢复了。不仅仅你以后提交的都会出现在提交记录中，你以前提交的也会恢复并出现在记录中。</p>
+    git config --global user.email  "cnfeat@gmail.com"//填写自己的邮箱</pre></code>
+    设置正确之后，提交记录就都恢复了。不仅仅你以后提交的都会出现在提交记录中，你以前提交的也会恢复并出现在记录中。
     <h3>10.2 每次提交都要求你输入账号跟密码</h3>
-    <p>原因是我们在clone分支时使用了 HTTPS 的地址，</p>
-    <p>HTTPS 的地址是做什么用的呢？其实它主要是用在一些防火墙或者代理服务器设置比较严格的情况下的，比如有些公司是禁止使用 SSH 连接外网，那么在这种情况下要想使用 Git 的话，就只能用 HTTPS 的方式了。</p>
-    <p>使用 HTTPS 的方式，也有储存密码的方式，但我们首推的方式是切换到 SSH，如果你的网络环境支持的话。</p>
-　　<p>回到你博客的根目录。打开git命令行界面，输入</p>
-    <pre>git remote set-url 你博客的ssh url</pre>
+    <p>原因是我们在clone分支时使用了 HTTPS 的地址，
+    HTTPS 的地址是做什么用的呢？其实它主要是用在一些防火墙或者代理服务器设置比较严格的情况下的，比如有些公司是禁止使用 SSH 连接外网，那么在这种情况下要想使用 Git 的话，就只能用 HTTPS 的方式了。
+    使用 HTTPS 的方式，也有储存密码的方式，但我们首推的方式是切换到 SSH，如果你的网络环境支持的话。
+    回到你博客的根目录。打开git命令行界面，输入</p>
+    <code><pre>git remote set-url 你博客的ssh url</pre></code>
     <p>如果你不知道你博客的ssh url，打开你的博客项目，右下角选择SSH，然后复制框里的url就行了</p>
 　　<img src="../../../images/article2/012.jpg" alt="">
     <p>之后再提交就不会要求你输入账号密码了。</p>
     <h3>10.3 页面调试不方便</h3>
-    <p>如果我们要给我们的博客布局或设置样式神马的，我们是否每次都要把代码写好然后推送到GitHub上，再打开自己的博客地址，看看布局有没有什么问题。如果有的话再改代码，再提交，再查看呢？</p>
-    <p>这样效率岂不是很低，有没有能够本地调试GitHub Pages上的页面的工具呢？</p>
-    <p>答案是肯定的。我用的是Jekyll。它的官网就有完整的教程，使用起来非常的简便。</p>
+    <p>如果我们要给我们的博客布局或设置样式神马的，我们是否每次都要把代码写好然后推送到GitHub上，再打开自己的博客地址，看看布局有没有什么问题。如果有的话再改代码，再提交，再查看呢？
+    这样效率岂不是很低，有没有能够本地调试GitHub Pages上的页面的工具呢？
+    答案是肯定的。我用的是Jekyll。它的官网就有完整的教程，使用起来非常的简便。</p>
     <h2>11.参考资料</h2>
-    <p>1.<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html</a></p>
-    <p>2.<a href="http://my.oschina.net/nark/blog/116299" target="_blank">http://my.oschina.net/nark/blog/116299</a></p>
-    <p>3.<a href="http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/" target="_blank">http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/</a></p>
-    <p>4.<a href="http://www.open-open.com/lib/view/open1366080269265.html" target="_blank">http://www.open-open.com/lib/view/open1366080269265.html</a></p>
+    <p>1.<a href="http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html" target="_blank">http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html</a>
+    2.<a href="http://my.oschina.net/nark/blog/116299" target="_blank">http://my.oschina.net/nark/blog/116299</a>
+    3.<a href="http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/" target="_blank">http://cnfeat.com/2014/05/10/2014-05-11-how-to-build-a-blog/</a>
+    4.<a href="http://www.open-open.com/lib/view/open1366080269265.html" target="_blank">http://www.open-open.com/lib/view/open1366080269265.html</a></p>
 
 
 　　
