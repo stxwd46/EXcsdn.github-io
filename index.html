@@ -5,9 +5,18 @@ layout: default
 
 {% for post in site.posts %}
 
-<section>
+<!-- <section>
      <a href='{{ site.baseurl }}{{ post.url }}'></a>
     <img src= '{{ post.image_url }}' />
+
+</section> -->
+<section>
+    <a href='{{ site.baseurl }}{{ post.url }}'></a>
+    <div class="border"></div>
+    <div class="img-wrap">
+        <span></span>
+        <img src= '{{ post.image_url }}' />
+    </div>
     <span class='title'>{{ post.title }}</span>
     <time>{{ post.date|date_to_string }}</time>
 </section>
