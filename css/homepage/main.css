@@ -36,19 +36,9 @@ body {
     position: relative;
 }
 
-header .headline {
+header img {
     width: 100%;
     height: 100%;
-}
-
-header .myself {
-    top: 50%;
-    left: 50%;
-    width:100px;
-    height: 100px;
-    margin-top: -50px;
-    margin-left: -50px;
-    position: absolute;
 }
 
 #container article {
